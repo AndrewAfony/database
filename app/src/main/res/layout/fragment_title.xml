@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context=".TitleFragment">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/createDBButton"
+                    style="@style/titleButton"
+                    android:layout_width="0dp"
+                    android:layout_height="0dp"
+                    android:layout_marginStart="16dp"
+                    android:layout_marginTop="48dp"
+                    android:layout_marginEnd="8dp"
+                    android:drawableTop="@drawable/ic_baseline_table"
+                    android:drawableTint="@color/black"
+                    android:paddingTop="40dp"
+                    android:paddingBottom="30dp"
+                    android:text="@string/create_db"
+                    app:layout_constraintBottom_toTopOf="@+id/button3"
+                    app:layout_constraintDimensionRatio="1:1"
+                    app:layout_constraintEnd_toStartOf="@+id/openDBButton"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <Button
+                    android:id="@+id/openDBButton"
+                    style="@style/titleButton"
+                    android:layout_width="0dp"
+                    android:layout_height="0dp"
+                    android:layout_marginStart="8dp"
+                    android:layout_marginTop="48dp"
+                    android:layout_marginEnd="16dp"
+                    android:drawableTop="@drawable/ic_folder"
+                    android:drawableTint="@color/black"
+                    android:paddingTop="40dp"
+                    android:paddingBottom="30dp"
+                    android:text="@string/open_db"
+                    app:layout_constraintBottom_toTopOf="@+id/button4"
+                    app:layout_constraintDimensionRatio="1:1"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toEndOf="@+id/createDBButton"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <Button
+                    android:id="@+id/secretButton"
+                    style="@style/titleButton"
+                    android:layout_width="0dp"
+                    android:layout_height="0dp"
+                    android:layout_marginStart="16dp"
+                    android:layout_marginEnd="8dp"
+                    android:layout_marginBottom="48dp"
+                    android:text="Teleport"
+                    android:textColor="@color/black"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintDimensionRatio="1:1"
+                    app:layout_constraintEnd_toStartOf="@+id/button"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/button3" />
+
+                <Button
+                    android:id="@+id/button3"
+                    style="@style/titleButton"
+                    android:layout_width="0dp"
+                    android:layout_height="0dp"
+                    android:layout_marginStart="16dp"
+                    android:layout_marginTop="40dp"
+                    android:layout_marginEnd="8dp"
+                    android:layout_marginBottom="40dp"
+                    android:text="@string/test"
+                    android:textColor="@color/black"
+                    app:layout_constraintBottom_toTopOf="@+id/secretButton"
+                    app:layout_constraintDimensionRatio="1:1"
+                    app:layout_constraintEnd_toStartOf="@+id/button4"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/createDBButton" />
+
+                <Button
+                    android:id="@+id/button4"
+                    style="@style/titleButton"
+                    android:layout_width="0dp"
+                    android:layout_height="0dp"
+                    android:layout_marginStart="8dp"
+                    android:layout_marginTop="40dp"
+                    android:layout_marginEnd="16dp"
+                    android:layout_marginBottom="40dp"
+                    android:text="@string/test"
+                    app:layout_constraintBottom_toTopOf="@+id/button"
+                    app:layout_constraintDimensionRatio="1:1"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toEndOf="@+id/button3"
+                    app:layout_constraintTop_toBottomOf="@+id/openDBButton" />
+
+                <Button
+                    android:id="@+id/button"
+                    style="@style/titleButton"
+                    android:layout_width="0dp"
+                    android:layout_height="0dp"
+                    android:layout_marginStart="8dp"
+                    android:layout_marginEnd="16dp"
+                    android:layout_marginBottom="48dp"
+                    android:text="@string/test"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintDimensionRatio="1:1"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toEndOf="@+id/secretButton"
+                    app:layout_constraintTop_toBottomOf="@+id/button4" />
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+</layout>

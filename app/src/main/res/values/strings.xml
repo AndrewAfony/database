@@ -1,0 +1,17 @@
+<resources>
+    <string name="app_name">Database</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="create_db">Create table</string>
+    <string name="open_db">Open</string>
+    <string name="enter_table_name">Enter table name</string>
+    <string name="enter_primary_key">Enter primary key</string>
+    <string name="table_name">Table name</string>
+    <string name="columnsText">Columns</string>
+    <string name="dummy_button">Dummy Button</string>
+    <string name="dummy_content">DUMMY\nCONTENT</string>
+    <string name="addRecord">Add Record</string>
+    <string name="search">Search</string>
+    <string name="test">Test</string>
+    <string name="create_record">Create Record</string>
+</resources>

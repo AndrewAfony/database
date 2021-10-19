@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/navigation"
+    app:startDestination="@id/titleFragment">
+    <fragment
+        android:id="@+id/titleFragment"
+        android:name="com.example.database.TitleFragment"
+        android:label="fragment_title"
+        tools:layout="@layout/fragment_title" >
+        <action
+            android:id="@+id/action_titleFragment_to_createDatabase"
+            app:destination="@id/createDatabase" />
+        <action
+            android:id="@+id/action_titleFragment_to_tableMainPage"
+            app:destination="@id/tableMainPage" />
+    </fragment>
+    <fragment
+        android:id="@+id/createDatabase"
+        android:name="com.example.database.CreateDatabase"
+        android:label="fragment_create_database"
+        tools:layout="@layout/fragment_create_database" >
+        <action
+            android:id="@+id/action_createDatabase_to_tableMainPage"
+            app:destination="@id/tableMainPage" />
+    </fragment>
+    <fragment
+        android:id="@+id/tableMainPage"
+        android:name="com.example.database.TableMainPage"
+        android:label="table_main_page_fragment"
+        tools:layout="@layout/table_main_page_fragment" />
+</navigation>
