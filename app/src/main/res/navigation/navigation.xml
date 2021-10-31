@@ -29,5 +29,9 @@
         android:id="@+id/tableMainPage"
         android:name="com.example.database.TableMainPage"
         android:label="table_main_page_fragment"
-        tools:layout="@layout/table_main_page_fragment" />
+        tools:layout="@layout/table_main_page_fragment" >
+        <action
+            android:id="@+id/action_tableMainPage_to_titleFragment"
+            app:destination="@id/titleFragment" />
+    </fragment>
 </navigation>

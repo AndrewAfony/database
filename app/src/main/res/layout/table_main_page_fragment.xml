@@ -4,28 +4,33 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     tools:context=".TableMainPage">
 
-    <LinearLayout
+    <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:orientation="vertical">
+        android:layout_height="match_parent">
 
         <TextView
             android:id="@+id/tableName"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Table name"
-            android:textSize="24sp"
-            android:textColor="@android:color/black"
+            android:layout_marginTop="16dp"
             android:gravity="center"
-            android:layout_marginTop="16dp"/>
+            android:text="Table name"
+            android:textColor="@android:color/black"
+            android:textSize="24sp"
+            app:layout_constraintTop_toTopOf="parent" />
 
         <androidx.cardview.widget.CardView
+            android:id="@+id/cardView3"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginHorizontal="20dp"
-            android:layout_marginVertical="8dp"
-            app:cardElevation="5dp"
-            app:cardCornerRadius="20dp">
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="16dp"
+            android:layout_marginEnd="16dp"
+            app:cardCornerRadius="20dp"
+            app:cardElevation="4dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tableName">
 
             <androidx.constraintlayout.widget.ConstraintLayout
                 android:layout_width="match_parent"
@@ -41,7 +46,7 @@
                     app:cardCornerRadius="20dp"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintDimensionRatio="w,1:1"
-                    app:layout_constraintEnd_toStartOf="@+id/guideline3"
+                    app:layout_constraintEnd_toStartOf="@+id/guideline4"
                     app:layout_constraintTop_toTopOf="parent">
 
                     <LinearLayout
@@ -78,7 +83,7 @@
                     app:cardCornerRadius="20dp"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintDimensionRatio="w,1:1"
-                    app:layout_constraintStart_toStartOf="@+id/guideline5"
+                    app:layout_constraintStart_toStartOf="@+id/guideline6"
                     app:layout_constraintTop_toTopOf="parent">
 
                     <LinearLayout
@@ -113,119 +118,229 @@
                     android:layout_height="28dp"
                     android:layout_marginEnd="5dp"
                     android:layout_marginBottom="5dp"
+                    android:background="@color/white"
                     android:src="@drawable/ic_update"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintEnd_toEndOf="parent"
-                    app:tint="@color/black"
-                    android:background="@color/white"/>
+                    app:tint="@color/black" />
 
                 <androidx.constraintlayout.widget.Guideline
-                    android:id="@+id/guideline3"
+                    android:id="@+id/guideline4"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:orientation="vertical"
-                    app:layout_constraintGuide_percent="0.45" />
+                    app:layout_constraintGuide_percent="0.447" />
 
                 <androidx.constraintlayout.widget.Guideline
-                    android:id="@+id/guideline5"
+                    android:id="@+id/guideline6"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:orientation="vertical"
-                    app:layout_constraintGuide_percent="0.55" />
+                    app:layout_constraintGuide_percent="0.555" />
 
             </androidx.constraintlayout.widget.ConstraintLayout>
 
         </androidx.cardview.widget.CardView>
 
-        <androidx.constraintlayout.widget.ConstraintLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content">
+        <Button
+            android:id="@+id/edit_button"
+            style="@style/titleButton"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:drawableTop="@drawable/ic_edit"
+            android:drawableTint="@color/black"
+            android:paddingTop="40dp"
+            android:paddingBottom="30dp"
+            android:text="@string/edit"
+            app:layout_constraintBottom_toBottomOf="@+id/addRecordButton"
+            app:layout_constraintEnd_toStartOf="@+id/guideline3"
+            app:layout_constraintStart_toStartOf="@+id/guideline7"
+            app:layout_constraintTop_toTopOf="@+id/addRecordButton" />
 
-            <Button
-                android:id="@+id/addRecordButton"
-                style="@style/titleButton"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_marginBottom="16dp"
-                android:drawableTop="@drawable/ic_folder"
-                android:drawableTint="@color/black"
-                android:paddingTop="40dp"
-                android:paddingBottom="30dp"
-                android:text="@string/addRecord"
-                app:layout_constraintBottom_toTopOf="@+id/addColumnButtonToTable"
-                app:layout_constraintDimensionRatio="w,1:1"
-                app:layout_constraintEnd_toStartOf="@+id/guideline6"
-                app:layout_constraintTop_toTopOf="parent" />
+        <!-- EDIT MODE -->
+        <Button
+            android:id="@+id/addRecordButton"
+            style="@style/titleButton"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:drawableTop="@drawable/ic_note_add"
+            android:drawableTint="@color/black"
+            android:paddingTop="40dp"
+            android:paddingBottom="30dp"
+            android:text="@string/addRecord"
+            android:visibility="invisible"
+            app:layout_constraintBottom_toTopOf="@+id/test_button"
+            app:layout_constraintEnd_toStartOf="@+id/guideline3"
+            app:layout_constraintStart_toStartOf="@+id/guideline7"
+            app:layout_constraintTop_toBottomOf="@+id/cardView3" />
 
-            <Button
-                android:id="@+id/searchButton"
-                style="@style/titleButton"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_marginBottom="16dp"
-                android:drawableTop="@drawable/ic_search"
-                android:drawableTint="@color/black"
-                android:paddingTop="40dp"
-                android:paddingBottom="30dp"
-                android:text="@string/search"
-                app:layout_constraintBottom_toTopOf="@+id/ButtonTest1"
-                app:layout_constraintDimensionRatio="w,1:1"
-                app:layout_constraintStart_toStartOf="@+id/guideline7"
-                app:layout_constraintTop_toTopOf="parent" />
+        <!-- SETTINGS MODE -->
+        <Button
+            android:id="@+id/deleteTableButton"
+            style="@style/titleButton"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:drawableTop="@drawable/ic_delete"
+            android:drawableTint="@color/black"
+            android:paddingTop="40dp"
+            android:paddingBottom="30dp"
+            android:text="@string/delete"
+            android:visibility="invisible"
+            app:layout_constraintBottom_toBottomOf="@+id/edit_button"
+            app:layout_constraintEnd_toStartOf="@+id/guideline3"
+            app:layout_constraintStart_toStartOf="@+id/guideline7"
+            app:layout_constraintTop_toTopOf="@+id/edit_button" />
 
-            <Button
-                android:id="@+id/addColumnButtonToTable"
-                style="@style/titleButton"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="8dp"
-                android:layout_marginBottom="16dp"
-                android:drawableTop="@drawable/ic_folder"
-                android:drawableTint="@color/black"
-                android:paddingTop="40dp"
-                android:paddingBottom="30dp"
-                android:text="Add Column"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintDimensionRatio="w,1:1"
-                app:layout_constraintEnd_toStartOf="@+id/guideline6"
-                app:layout_constraintTop_toBottomOf="@+id/addRecordButton" />
+        <Button
+            android:id="@+id/searchButton"
+            style="@style/titleButton"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:drawableTop="@drawable/ic_search"
+            android:drawableTint="@color/black"
+            android:paddingTop="40dp"
+            android:paddingBottom="30dp"
+            android:text="@string/search"
+            app:layout_constraintBottom_toTopOf="@+id/settingsButton"
+            app:layout_constraintEnd_toStartOf="@+id/guideline8"
+            app:layout_constraintStart_toStartOf="@+id/guideline5"
+            app:layout_constraintTop_toBottomOf="@+id/cardView3" />
 
-            <Button
-                android:id="@+id/ButtonTest1"
-                style="@style/titleButton"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="8dp"
-                android:layout_marginBottom="16dp"
-                android:drawableTop="@drawable/ic_folder"
-                android:drawableTint="@color/black"
-                android:paddingTop="40dp"
-                android:paddingBottom="30dp"
-                android:text="@string/test"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintDimensionRatio="w,1:1"
-                app:layout_constraintStart_toStartOf="@+id/guideline7"
-                app:layout_constraintTop_toBottomOf="@+id/searchButton" />
+        <!-- EDIT MODE -->
+        <Button
+            android:id="@+id/addColumnToTableButton"
+            style="@style/titleButton"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:drawableTop="@drawable/ic_view_column"
+            android:drawableTint="@color/black"
+            android:paddingTop="40dp"
+            android:paddingBottom="30dp"
+            android:text="@string/add_column"
+            android:visibility="invisible"
+            app:layout_constraintBottom_toBottomOf="@+id/searchButton"
+            app:layout_constraintEnd_toStartOf="@+id/guideline8"
+            app:layout_constraintStart_toStartOf="@+id/guideline5"
+            app:layout_constraintTop_toTopOf="@+id/searchButton" />
 
-            <androidx.constraintlayout.widget.Guideline
-                android:id="@+id/guideline6"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:orientation="vertical"
-                app:layout_constraintGuide_percent="0.45" />
+        <!-- SETTINGS MODE -->
+        <Button
+            android:id="@+id/clearTableButton"
+            style="@style/titleButton"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:drawableTop="@drawable/ic_clear_table"
+            android:drawableTint="@color/black"
+            android:paddingTop="40dp"
+            android:paddingBottom="30dp"
+            android:text="@string/clear_table"
+            android:visibility="invisible"
+            app:layout_constraintBottom_toBottomOf="@+id/searchButton"
+            app:layout_constraintEnd_toStartOf="@+id/guideline8"
+            app:layout_constraintStart_toStartOf="@+id/guideline5"
+            app:layout_constraintTop_toTopOf="@+id/searchButton" />
 
-            <androidx.constraintlayout.widget.Guideline
-                android:id="@+id/guideline7"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:orientation="vertical"
-                app:layout_constraintGuide_percent="0.55" />
+        <Button
+            android:id="@+id/test_button"
+            style="@style/titleButton"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:layout_marginBottom="16dp"
+            android:drawableTop="@drawable/ic_folder"
+            android:drawableTint="@color/black"
+            android:paddingTop="40dp"
+            android:paddingBottom="30dp"
+            android:text="@string/test"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@+id/guideline3"
+            app:layout_constraintStart_toStartOf="@+id/guideline7"
+            app:layout_constraintTop_toBottomOf="@+id/addRecordButton" />
 
-        </androidx.constraintlayout.widget.ConstraintLayout>
+        <!-- EDIT MODE -->
+        <Button
+            android:id="@+id/deleteRecordButton"
+            style="@style/titleButton"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:layout_marginBottom="16dp"
+            android:drawableTop="@drawable/ic_delete_outline"
+            android:drawableTint="@color/black"
+            android:paddingTop="40dp"
+            android:paddingBottom="30dp"
+            android:text="Del record"
+            android:visibility="invisible"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@+id/guideline3"
+            app:layout_constraintStart_toStartOf="@+id/guideline7"
+            app:layout_constraintTop_toBottomOf="@+id/addRecordButton" />
+
+        <Button
+            android:id="@+id/settingsButton"
+            style="@style/titleButton"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:layout_marginBottom="16dp"
+            android:drawableTop="@drawable/ic_settings"
+            android:drawableTint="@color/black"
+            android:paddingTop="40dp"
+            android:paddingBottom="30dp"
+            android:text="@string/settings"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@+id/guideline8"
+            app:layout_constraintStart_toStartOf="@+id/guideline5"
+            app:layout_constraintTop_toBottomOf="@+id/searchButton" />
+
+        <!-- EDIT MODE -->
+        <Button
+        android:id="@+id/backButton"
+        style="@style/titleButton"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:layout_marginBottom="16dp"
+        android:drawableTop="@drawable/ic_arrow_back"
+        android:drawableTint="@color/black"
+        android:paddingTop="40dp"
+        android:paddingBottom="30dp"
+        android:visibility="invisible"
+        android:text="Back"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/guideline8"
+        app:layout_constraintStart_toStartOf="@+id/guideline5"
+        app:layout_constraintTop_toBottomOf="@+id/searchButton" />
 
 
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guideline3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent="0.45" />
 
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guideline5"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent="0.55" />
 
-    </LinearLayout>
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guideline7"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent="0.04" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guideline8"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent="0.96" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
 
 </layout>

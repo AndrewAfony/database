@@ -42,7 +42,7 @@ class CreateDatabase : Fragment() {
         }
 
         binding.createButton.setOnClickListener {
-            if (binding.enterTableName.text.isNullOrBlank()) { // TODO(Добавить проверку, введены ли другие колонки (если нужно))
+            if (binding.enterTableName.text.isNullOrBlank()) {
                 Toast.makeText(requireContext(), "Enter table name", Toast.LENGTH_LONG).show()
                 binding.enterTableName.error = "Enter table name"
             }
@@ -76,8 +76,6 @@ class CreateDatabase : Fragment() {
             val columnName: EditText? = childAt?.findViewById(R.id.columnNameText)
             val spinner: Spinner? = childAt?.findViewById(R.id.spinner_type)
 
-            // TODO(Настроить условие ниже, возвращается лист на один больше с null\null)
-
             val column = ColumnsInfo()
 
             if (!(columnName?.text.isNullOrEmpty())) {
@@ -100,8 +98,6 @@ class CreateDatabase : Fragment() {
             Toast.makeText(requireContext(), "Enter All Details Correctly", Toast.LENGTH_LONG)
                 .show()
         }
-
-
 
         return result
     }

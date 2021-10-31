@@ -18,6 +18,11 @@ import com.example.database.databinding.FragmentTitleBinding
 
 class TitleFragment : Fragment() {
 
+    companion object{
+        val columns =
+            mutableListOf<ColumnsInfo>()
+    }
+
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
@@ -25,13 +30,15 @@ class TitleFragment : Fragment() {
         val binding: FragmentTitleBinding =
             DataBindingUtil.inflate(inflater, R.layout.fragment_title, container, false)
 
-        binding.createDBButton.setOnClickListener {
-            it?.findNavController()?.navigate(R.id.action_titleFragment_to_createDatabase)
+        binding.createDBButton.setOnClickListener { it?.findNavController()?.navigate(R.id.action_titleFragment_to_createDatabase) }
+
+        binding.openTableButton.setOnClickListener {
+            DialogOpenTable().apply {
+                show(this@TitleFragment.parentFragmentManager, "DialogOpenTable")
+            }
         }
 
-        binding.secretButton.setOnClickListener {
-            it?.findNavController()?.navigate(R.id.action_titleFragment_to_tableMainPage)
-        }
+        binding.secretButton.setOnClickListener { it?.findNavController()?.navigate(R.id.action_titleFragment_to_tableMainPage) }
 
         return binding.root
     }

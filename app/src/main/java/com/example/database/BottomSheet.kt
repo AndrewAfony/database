@@ -25,9 +25,6 @@ class BottomSheet : BottomSheetDialogFragment() {
 
     private val listOfRecordsValue: MutableList<String> = mutableListOf()
 
-    companion object{
-        var counterOfRecords = 0
-    }
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -55,13 +52,13 @@ class BottomSheet : BottomSheetDialogFragment() {
                 cleanEditText()
 
                 addRecordToFile()
-
-                counterOfRecords++
             }
         }
     }
 
     private fun checkIfValid(): Boolean{
+        
+        // TODO (ColumnsInfo)
 
         listOfRecordsValue.clear()
 
@@ -121,7 +118,7 @@ class BottomSheet : BottomSheetDialogFragment() {
     }
 
     private fun arrayRecordToString(list: MutableList<String>): String{
-        var result = "${counterOfRecords + 1} | "
+        var result = ""
 
         val plusStr = buildString {
             for (item in list){

@@ -23,12 +23,12 @@
                     android:text="@string/create_db"
                     app:layout_constraintBottom_toTopOf="@+id/button3"
                     app:layout_constraintDimensionRatio="1:1"
-                    app:layout_constraintEnd_toStartOf="@+id/openDBButton"
+                    app:layout_constraintEnd_toStartOf="@+id/openTableButton"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toTopOf="parent" />
 
                 <Button
-                    android:id="@+id/openDBButton"
+                    android:id="@+id/openTableButton"
                     style="@style/titleButton"
                     android:layout_width="0dp"
                     android:layout_height="0dp"
@@ -54,7 +54,7 @@
                     android:layout_marginStart="16dp"
                     android:layout_marginEnd="8dp"
                     android:layout_marginBottom="48dp"
-                    android:text="Teleport"
+                    android:text="@string/test"
                     android:textColor="@color/black"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintDimensionRatio="1:1"
@@ -93,7 +93,7 @@
                     app:layout_constraintDimensionRatio="1:1"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toEndOf="@+id/button3"
-                    app:layout_constraintTop_toBottomOf="@+id/openDBButton" />
+                    app:layout_constraintTop_toBottomOf="@+id/openTableButton" />
 
                 <Button
                     android:id="@+id/button"

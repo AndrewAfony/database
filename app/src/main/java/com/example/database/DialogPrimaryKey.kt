@@ -60,9 +60,7 @@ class DialogPrimaryKey : DialogFragment() {
 
                     requireActivity().findNavController(R.id.myNavHostFragment).navigate(R.id.action_createDatabase_to_tableMainPage)
                 }
-                .setNegativeButton("Отмена") { dialog, id ->
-
-                }
+                .setNegativeButton("Отмена") { _, _ -> }
 
             builder.create()
         } ?: throw IllegalStateException("Activity cannot be null")
@@ -70,14 +68,14 @@ class DialogPrimaryKey : DialogFragment() {
 
     private fun columnInfoToString(list: MutableList<ColumnsInfo>): String {
 
-        var result = "№ | "
+        var result = ""
 
         for (item in list) {
 
             val plusStr = buildString{
-                if (item.isPrimaryKey) append("[key] ")
+                if (item.isPrimaryKey) append("[key]")
                 append(item.columnName)
-                append(" (${item.typeOfColumn}) | ")
+                append(" (${item.typeOfColumn})|")
             }
 
             result += plusStr

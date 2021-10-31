@@ -3,10 +3,6 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools">
 
-    <!-- TODO Добавить кнопки создания, открытия, удаления, очистки БД-->
-
-    <!-- TODO После нажатия СОЗДАТЬ нужно ввести имя, поля-->
-
         <LinearLayout
             android:id="@+id/linearLayout"
             android:layout_width="match_parent"
